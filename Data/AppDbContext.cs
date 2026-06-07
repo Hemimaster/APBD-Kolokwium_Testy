@@ -1,4 +1,3 @@
-using APBD_Kolokwium.Configurations;
 using APBD_Kolokwium.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,12 +20,5 @@ public class AppDbContext : DbContext
 
     public DbSet<ProductOrder> ProductOrders { get; set; }
     
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.ApplyConfiguration(new ClientConfiguration());
-        modelBuilder.ApplyConfiguration(new StatusConfiguration());
-        modelBuilder.ApplyConfiguration(new ProductConfiguration());
-        modelBuilder.ApplyConfiguration(new OrderConfiguration());
-        modelBuilder.ApplyConfiguration(new ProductOrderConfiguration());
-    }
+    
 }
